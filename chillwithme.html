@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Chill With Me - Search</title>
+	<link href='http://fonts.googleapis.com/css?family=Lato:100,300' rel='stylesheet' type='text/css'>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<style type="text/css">
+
+				/* http://meyerweb.com/eric/tools/css/reset/ 
+		   v2.0 | 20110126
+		   License: none (public domain)
+		*/
+
+		html, body, div, span, applet, object, iframe,
+		h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+		a, abbr, acronym, address, big, cite, code,
+		del, dfn, em, img, ins, kbd, q, s, samp,
+		small, strike, strong, sub, sup, tt, var,
+		b, u, i, center,
+		dl, dt, dd, ol, ul, li,
+		fieldset, form, label, legend,
+		table, caption, tbody, tfoot, thead, tr, th, td,
+		article, aside, canvas, details, embed, 
+		figure, figcaption, footer, header, hgroup, 
+		menu, nav, output, ruby, section, summary,
+		time, mark, audio, video {
+			margin: 0;
+			padding: 0;
+			border: 0;
+			font-size: 100%;
+			font: inherit;
+			vertical-align: baseline;
+		}
+		/* HTML5 display-role reset for older browsers */
+		article, aside, details, figcaption, figure, 
+		footer, header, hgroup, menu, nav, section {
+			display: block;
+		}
+		body {
+			line-height: 1;
+		}
+		ol, ul {
+			list-style: none;
+		}
+		blockquote, q {
+			quotes: none;
+		}
+		blockquote:before, blockquote:after,
+		q:before, q:after {
+			content: '';
+			content: none;
+		}
+		h1{
+			font-family: 'Lato', sans-serif;
+			font-size: 3.5em;
+			color: white;
+			font-weight: 100;
+			text-align: center;
+			margin-top: 50px;
+
+		}
+		table {
+			border-collapse: collapse;
+			border-spacing: 0;
+		}
+		#first{
+				margin: auto;
+			  position: absolute;
+			  height: 100%;
+			  width: 100%;
+			  background: -webkit-linear-gradient(left top, rgb(221,94,137) , rgb(247,187,151)); /* For Safari 5.1 to 6.0 */
+			  background: -o-linear-gradient(bottom right, rgb(221,94,137), rgb(247,187,151)); /* For Opera 11.1 to 12.0 */
+			  background: -moz-linear-gradient(bottom right, rgb(221,94,137), rgb(247,187,151)); /* For Firefox 3.6 to 15 */
+			  background: linear-gradient(to bottom right, rgb(221,94,137) , rgb(247,187,151)); /* Standard syntax */
+		}
+		#second{
+			background-color: blue;
+			position: fixed;
+			background-size: cover;
+			width: 100%;
+			height: 100%;
+			
+		}
+		a, a:visited{
+			color: white;
+			font-size: 2.5em;
+			font-family: "Lato", sans-serif;
+			text-decoration: none;
+		}
+		a:hover{
+			color: black;
+		}
+		ul{
+			margin-top: 20px;
+			margin-left: 100px;
+			margin-right: 600px;
+			line-height: 70px;
+		}
+		p{
+			margin-top: -10px;
+			line-height: 40px;
+			color: white;
+			font-size: 20px;
+			font-family: "Lato", sans-serif;
+		}
+		li{
+			margin-top: 30px;
+		}
+
+
+	</style>
+</head>
+<body>
+	<section id="first"><h1>What city/area would you like to chill in?</h1><center><input type="text" id="city" style="margin-top:20px;padding:10px 30% 10px 30%;font-family:'Lato', sans-serif;font-size:1.5em;margin-top:40px;text-align:center;background:transparent;color: white;border:2px solid white;"><div id="title"></div></center><div id="spots"></div></section>
+
+	<script type="text/javascript">
+	$(document).ready(function(){
+	 $("#second").hide();
+	 $('#city').keypress(function (e) {
+	 var key = e.which;
+	 if(key == 13)  // the enter key code
+	  {
+			var text = $('#city').val();
+			$('#title').append("<center><h1 style='margin-top:30px;'>The Best Places to chill in " + text +" are...</h1></center>");
+
+
+
+	}
+
+	// else{
+
+	// }
+
+	if(text == "Manhattan"){
+		$('#spots').append("<ul><li><a href='https://www.google.com/maps/place/Bryant+Park/@40.753596,-73.983233,17z/data=!3m1!4b1!4m2!3m1!1s0x89c259aae7a0b1bd:0xb49cafb82537f1a7' target='_blank'>Bryant Park</a><p> - The Third Largest Park in NYC - Here lies the greatest picnic experience that you can have, if you chill here at a time in the middle of the day you can sit and watch outdoor theatre, and play some football all at the same time.</p><img src='http://2.bp.blogspot.com/_U1-UzJKSQWM/TAhte-s4y6I/AAAAAAAAAZw/-NXQG6rKkBM/s1600/Bryant_park_0021.jpg' style='max-width:300px;max-height:300px;float:right;display:inline-block;margin-right:-400px;margin-top:-180px'></li><li><a href='https://www.google.com/maps/place/Central+Park/@40.782865,-73.965355,17z/data=!3m1!4b1!4m2!3m1!1s0x89c2589a018531e3:0xb9df1f7387a94119' target='_blank'>Central Park</a><p> - The second largest park in NYC, offering citi bikes, and other modes of manual transportation many fairs and events take place here.</p><img src='http://blogs.villagevoice.com/runninscared/central-park1.jpg' style='max-width:300px;max-height:200px;float:right;display:inline-block;margin-right:-400px;margin-top:-120px;min-width:300px;'></li></ul>");
+	}
+
+	if(text == "New Brunswick"){
+	 	$('#spots').append("<ul><li><a href='https://www.google.com/maps/place/Rutgers–New+Brunswick/@40.500819,-74.447399,17z/data=!3m1!4b1!4m2!3m1!1s0x89c3c65518be06bf:0x51b42066917aaf48' target='_blank'>Rutgers Student Center</a><p> - A Popular New Jersey University - There's all kinds of stuff to do at Rutgers, including going to awesome hackathons!</p><img src='http://www.metromba.com/wp-content/uploads/2014/09/rutgersbiznewark.jpg' style='max-width:300px;max-height:300px;float:right;display:inline-block;margin-right:-400px;margin-top:-180px'></li><li><a href='https://www.google.com/maps/place/Ta+Ta's+Pizza/@40.496951,-74.454094,17z/data=!3m1!4b1!4m2!3m1!1s0x89c3c6f8f2bb418b:0xb150fb440741a3ee target='_blank'>TaTa's</a><p> - A chill pizza spot in New Brunswick where you can get affordable and tasty pizza.</p><img src='http://www.amawebs.com/storage/photos/n68cv30fbtib.jpg' style='max-width:300px;max-height:200px;float:right;display:inline-block;margin-right:-400px;margin-top:-120px;min-width:300px;'></li></ul>");
+	}
+	
+	if(text == "Brooklyn"){
+	 	$('#spots').append("<ul><li><a href='https://www.google.com/maps/place/Prospect+Park/@40.660204,-73.968956,17z/data=!3m1!4b1!4m2!3m1!1s0x89c25b1087680443:0x178bf7c600df7a98' target='_blank'>Prospect Park</a><p> - A Scenic Brooklyn Destination - Prospect Park is full of activities, including quaint cafés, various athletics and beautiful nature surrounding you during your walk.</p><img src='http://smithratliff.com/wp-content/uploads/2012/05/great-mooga-googa-prospect-park-brooklyn.jpg' style='max-width:300px;max-height:300px;float:right;display:inline-block;margin-right:-400px;margin-top:-180px'></li><li><a href='https://www.google.com/maps/place/Brooklyn+Bridge+Park/@40.701708,-73.997018,17z/data=!3m1!4b1!4m2!3m1!1s0x89c25a46a369a18d:0xa109779d5185c305' target='_blank'>Brooklyn Bridge Park</a><p> - A beautiful park paired with an incredible landmark, Brooklyn Bridge Park is a great place to go to relax within the chaos of the city.</p><img src='http://macaulay.cuny.edu/eportfolios/lewisf10/files/2010/11/bklyn.jpg' style='max-width:300px;max-height:200px;float:right;display:inline-block;margin-right:-400px;margin-top:-120px;min-width:300px;'></li></ul>");
+	}
+});
+});
+ 
+	</script>
+</body>
+</html>
